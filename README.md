@@ -11,6 +11,7 @@ This repository contains my Rust projects ranging from beginner exercises to mor
 * Calculator
 * Banking Program
 * Number Guessing Game
+* Rock Paper Scissors Game
 * More projects coming soon...
 
 ## Goals
