@@ -1,5 +1,3 @@
-use std::cmp::max;
-
 use rand::Rng;
 
 use crate::input;
