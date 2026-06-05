@@ -1,3 +1,5 @@
+use std::cmp::max;
+
 use rand::Rng;
 
 use crate::input;
@@ -28,8 +30,8 @@ fn get_difficulty() -> String {
     }
 }
 
-fn main_game_loop(random_number: u32, max_attempts: u32, max_number: u32, computer_score: &mut u32, player_score: &mut u32) {
-    let mut attempts: u32 = 0;
+fn main_game_loop(random_number: u32, mut max_attempts: u32, max_number: u32, computer_score: &mut u32, player_score: &mut u32) {
+    let mut attempts: u32 = 0; 
     let mut has_won: bool = false;
 
     while max_attempts > 0 && !has_won {
@@ -42,19 +44,20 @@ fn main_game_loop(random_number: u32, max_attempts: u32, max_number: u32, comput
             }
         };
 
-        attempts += 1;
+        attempts += 1;      
+        max_attempts -= 1;  
 
         if guess > max_number || guess < 1 {
             println!("Your guess is out of bounds. Please try again.");
-            println!("Tries left: {}", max_attempts - attempts);
+            println!("Tries left: {max_attempts}");
         } else if guess < random_number {
             println!("Too low! Try again.");
-            println!("Tries left: {}", max_attempts - attempts);
+            println!("Tries left: {max_attempts}");
         } else if guess > random_number {
             println!("Too high! Try again.");
-            println!("Tries left: {}", max_attempts - attempts);
+            println!("Tries left: {max_attempts}");
         } else {
-            println!("Congratulations! You've guessed the number in {attempts} attempts!",);
+            println!("Congratulations! You've guessed the number in {attempts} attempts!");
             *player_score += 1;
             has_won = true;
         }
