@@ -1,6 +1,7 @@
 mod calculator;
 mod banking_program;
 mod number_guessing_game;
+mod rock_paper_scissors;
 
 fn input(prompt: &str) -> String {
     use std::io::{self, Write};
@@ -29,6 +30,7 @@ fn files() {
     println!("1. Calculator");
     println!("2. Banking Program");
     println!("3. Number Guessing Game");
+    println!("4. Rock Paper Scissors");
     println!("More Coming Soon...");
 }
 
@@ -45,6 +47,7 @@ fn main() {
             "calculator" | "1" => calculator::run(),
             "banking program" | "2" => banking_program::run(),
             "number guessing game" | "3" => number_guessing_game::run(),
+            "rock paper scissors" | "4" => rock_paper_scissors::run(),
             "exit" => {
                 println!("Exiting application");
                 break;
