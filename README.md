@@ -12,6 +12,7 @@ This repository contains my Rust projects ranging from beginner exercises to mor
 * Banking Program
 * Number Guessing Game
 * Rock Paper Scissors Game
+* Todo List
 * More projects coming soon...
 
 ## Goals
