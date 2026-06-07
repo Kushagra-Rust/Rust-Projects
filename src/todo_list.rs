@@ -107,7 +107,7 @@ fn view_task(tasks: &Vec<Task>) {
             index + 1,
             task.task,
             match &task.priority {
-                Priority::Low => "Low", 
+                Priority::Low => "Low",
                 Priority::Medium => "Medium",
                 Priority::High => "High",
             },
